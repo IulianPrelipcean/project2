@@ -1,0 +1,19 @@
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+	<section class="container grey-text">
+		<form class="white formular" method="POST">
+			<label>Username:</label>
+			<input type="text" name="username">
+			<label>password:</label>
+			<input type="password" name="password">
+			<div class="center">
+				<input type="submit" name="register" value="Register" class="btn brand z-depth-0">	
+			</div>
+		</form>
+	</section>
+
+{% endblock %}
