@@ -1,5 +1,5 @@
 
-{% extends 'layout.html' %}
+{% extends 'layout_second.html' %}
 
 
 {% block content %}
@@ -12,7 +12,9 @@
 			<input type="password" name="password">
 			<div class="center">
 				<input type="submit" name="login" value="Log in" class="btn brand z-depth-0">
-				<a href="/register" class="btn brand z-depth-0">Register</a>	
+				<a href="/register" class="btn brand z-depth-0">Register</a>
+				<div class="center red-text">{% print errors['fail'] %}
+
 			</div>
 		</form>
 	</section>

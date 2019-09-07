@@ -2,5 +2,24 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-	
+
+	<div class="container">
+		<a href="/addbooks" class="btn brand z-depth-0">Add a book</a>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			{% for rez in result: %}
+				<div class="col s6 md3">
+					<div class="card z-depth-0 grey">
+						<div class="card-content center">
+							<h6>{% print (rez['book_name']) %}</h6>
+							{% print (rez['author']) %}
+						</div>							
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
 {% endblock %}

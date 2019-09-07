@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+	<section class="container grey-text">
+		<form class="white formular" method="POST">
+			<label>Book name:</label>
+			<input type="text" name="book_name">
+			<label>Author:</label>
+			<input type="text" name="author">
+			<label>Number of pages:</label>
+			<input type="text" name="nr_page">
+			<label>Review:</label>
+			<input type="text" name="review">
+			<div class="center">
+				<input type="submit" name="add" value="add" class="btn brand z-depth-0">
+			</div>
+		</form>
+	</section>
+
+{% endblock %}
