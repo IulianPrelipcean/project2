@@ -19,18 +19,6 @@ def show():
 			mycursor.execute(sql,val)
 			mydb.commit()
 
-			# take the user id
-			sql = "SELECT * FROM credentials WHERE username=%s AND password=%s"
-			val = (username, password)
-			mycursor.execute(sql,val)
-			result = mycursor.fetchall()
-			id_user = result[0][0]
-
-			# make the table for the users
-			name = 'personal_books'+str(id_user)
-			sql = "CREATE TABLE " + name + """(id INT AUTO_INCREMENT PRIMARY KEY, book_name varchar(255), author varchar(255), nr_page INT , review varchar(255))"""
-			mycursor.execute(sql)
-
 
 			return redirect('/logpage')
 

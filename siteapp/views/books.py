@@ -8,12 +8,12 @@ bp = Blueprint(__name__, __name__, template_folder='templates')
 
 
 def show():
-	id_user = 7
-	name = 'personal_books'+str(id_user)
-	sql = "SELECT * FROM " + name
+	id_primary = int(session['id_user'])
 	mycursor = mydb.cursor()
-	mycursor.execute(sql)
+	sql = "SELECT * FROM personal_books where id_user=%s"
+	val = (id_primary,)
+	mycursor.execute(sql, val)
 	result = mycursor.fetchall()
 
 	return render_template('books.html', result=result)
-	#return session['number']
+	#return session['id_user']

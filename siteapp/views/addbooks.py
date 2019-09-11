@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, session
 from siteapp.config.db_connect import mydb
 
 
@@ -15,14 +15,15 @@ def show():
 			author = request.form.get('author')
 			nr_page = request.form.get('nr_page')
 			review = request.form.get('review')
-
-			name = 'personal_books7'
+			id_user = int(session['id_user'])
 
 			mycursor = mydb.cursor()
-			sql = "INSERT INTO " + name + "(book_name, author, nr_page, review) VALUES (%s, %s, %s, %s) "
-			val = (book_name, author, nr_page, review)
+			sql = "INSERT INTO personal_books(id_user,book_name, author, nr_page, review) VALUES (%s,%s, %s, %s, %s) "
+			val = (id_user,book_name, author, nr_page, review)
 			mycursor.execute(sql,val)
 			mydb.commit()
+
+			return redirect('books')
 
 
 	return render_template('addbooks.html', errors=errors)
