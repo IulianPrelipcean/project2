@@ -6,16 +6,20 @@
 	<div class="container">
 		<a href="/addbooks" class="btn brand z-depth-0">Add a book</a>
 	</div>
-
 	<div class="container">
 		<div class="row">
 			{% for rez in result: %}
 				<div class="col s6 md3">
 					<div class="card z-depth-0 grey">
+						<!-- <img href="img/book2.jpeg" class="image" > -->
 						<div class="card-content center">
-							<h6>{% print (rez['book_name']) %}</h6>
-							{% print (rez['author']) %}
-						</div>							
+							<h6>{% print ('Name: ' + rez[2]) %}</h6>
+							<p>{%	print ('Author:' + rez[3]) 	%}</p>
+							<p>
+								{%	print ('Number of pages: ') 	%}
+							{% print (rez[4]) 	%}</p>
+							<p>{%	print ('Review:' + rez[5]) 	%}</p>
+						</div>				
 					</div>
 				</div>
 			{% endfor %}
