@@ -23,7 +23,7 @@ def show():
 
 			#delete the query
 			sql = "DELETE FROM credentials WHERE id=%s"
-			val = (id_to_delete,)
+			val = (id_to_delete,) 
 			mycursor.execute(sql, val)
 			mydb.commit()
 
