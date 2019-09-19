@@ -4,15 +4,15 @@
 
 {% block content %}
 
-	<section class="container grey-text">
+	<section class="container grey-text section_log">
 		<form class="white formular" method="POST">
-			<label>Username:</label>
+			<label style="font-size:20px;">Username:</label>
 			<input type="text" name="username">
-			<label>password:</label>
+			<label style="font-size:20px;">password:</label>
 			<input type="password" name="password">
 			<div class="center">
-				<input type="submit" name="login" value="Log in" class="btn brand z-depth-0">
-				<a href="/register" class="btn brand z-depth-0">Register</a>
+				<input type="submit" name="login" value="Log in" class="btn brand z-depth-0" style="font-size:20px;">
+				<a href="/register" class="btn brand z-depth-0" style="font-size:20px;">Register</a>
 				<div class="center red-text">{% print errors['fail'] %}
 
 			</div>

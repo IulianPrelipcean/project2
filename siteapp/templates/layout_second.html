@@ -6,6 +6,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 	<style type="text/css">
+		.header{
+			background: url(static/image/book5.jpg);
+			background-size:cover;
+			background-position: cover;
+			min-height:500px;
+		}
+		.nav_setup{
+			background: rgba(1,1,1,0.6);
+		}
 		.brand{
 			background: black;
 		}
@@ -13,24 +22,32 @@
 			color:white;
 		}
 		.formular{
-			max-width:560px;
-			margin:20px auto;
+			max-width:700px;
+			max-height:300px;
+			margin:40px auto;
 			margin-top:20px;
-			padding:20px;
+			padding:40px;
+
+		}
+		.section_log{
+			margin-top:-200px;
 		}
 	</style>
 
 </head>
-<body style="background-color:#726161">
-	<nav style="background-color:#534646;">
-		<div class="container">
-			<a href="/" class=" left brand-logo brand-text">La Bibliotheque</a>
-			<ul id="nav-mobile"  class="right hide-on-small-right">
-				<li><a href="/" class="btn brand z-depth-0">Home</a></li>
-				<li><a href="/logpage" class="btn brand z-depth-0">sing in</a></li>
-			</ul>
-		</div>
-	</nav>
+<body class="#e0e0e0 grey lighten-2">
+	<header class="header">
+		<nav  class="nav-wraper nav_setup">
+			<div class="container">
+				<a href="/" class=" left brand-logo brand-text">La Bibliotheque</a>
+				<ul id="nav-mobile"  class="right hide-on-small-right">
+					<li><a href="/" class="btn brand z-depth-0">Home</a></li>
+					<li><a href="/logpage" class="btn brand z-depth-0">sing in</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
 
 	{% block content %}
 	{% endblock %}

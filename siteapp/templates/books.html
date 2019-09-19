@@ -9,16 +9,41 @@
 	<div class="container">
 		<div class="row">
 			{% for rez in result: %}
-				<div class="col s6 md3">
-					<div class="card z-depth-0 grey">
-						<!-- <img href="img/book2.jpeg" class="image" > -->
-						<div class="card-content center">
-							<h6>{% print ('Name: ' + rez[2]) %}</h6>
-							<p>{%	print ('Author:' + rez[3]) 	%}</p>
-							<p>
-								{%	print ('Number of pages: ') 	%}
-							{% print (rez[4]) 	%}</p>
-							<p>{%	print ('Review:' + rez[5]) 	%}</p>
+				<div class="col s6 ">
+					<div class="card transparent_setup">
+						<div class="row">
+							<div class="col s6">
+								<img src="static/image/book6.png" class="image_setup">
+							</div>
+							<div class="col s6">
+								<div class="center" style="margin-top:100px;">
+									<p class="p_title">{% print (rez[2]) %}</h5>
+									<p class="p_author">{% print ('By:  ' + rez[3]) 	%}</p>
+									<p >{% print (rez[4]) 	%}
+										{%	print (' pages')
+										%}
+									</p>
+								</div>
+
+							</div>
+						</div>
+						<div class="card-content">
+							<p class="p_review bold">{% print('Review') %}
+							<p class="white ">{%	print (rez[5]) 	%}</p>
+						</div>
+						<div class="row ">
+							<div class="col">
+								<form style="padding:0px; margin:0px;" class="formular" method="POST">
+										<input type="hidden" name="id_to_delete" value="{% print(rez[0]) %}">
+										<input type="submit" name="add_to_shop", value="add to shop" class="btn brand z-depth-0" >
+								</form>
+							</div>
+							<div class="col">
+								<form style="padding:0px; margin:0px;" class="formular" method="POST">
+										<input type="hidden" name="id_to_delete" value="{% print(rez[0]) %}">
+										<input type="submit" name="delete", value="delete book" class="btn brand z-depth-0" >
+								</form>
+							</div>
 						</div>				
 					</div>
 				</div>
