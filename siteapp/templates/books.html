@@ -17,9 +17,9 @@
 							</div>
 							<div class="col s6">
 								<div class="center" style="margin-top:100px;">
-									<p class="p_title">{% print (rez[2]) %}</h5>
-									<p class="p_author">{% print ('By:  ' + rez[3]) 	%}</p>
-									<p >{% print (rez[4]) 	%}
+									<p class="p_title">{% print (rez[3]) %}</h5>
+									<p class="p_author">{% print ('By:  ' + rez[4]) 	%}</p>
+									<p >{% print (rez[5]) 	%}
 										{%	print (' pages')
 										%}
 									</p>
@@ -29,19 +29,19 @@
 						</div>
 						<div class="card-content">
 							<p class="p_review bold">{% print('Review') %}
-							<p class="white ">{%	print (rez[5]) 	%}</p>
+							<p class="white ">{%	print (rez[6]) 	%}</p>
 						</div>
 						<div class="row ">
 							<div class="col">
 								<form style="padding:0px; margin:0px;" class="formular" method="POST">
-										<input type="hidden" name="id_to_delete" value="{% print(rez[0]) %}">
+										<input type="hidden" name="id_to_move" value="{% print(rez[0]) %}">
 										<input type="submit" name="add_to_shop", value="add to shop" class="btn brand z-depth-0" >
 								</form>
 							</div>
 							<div class="col">
 								<form style="padding:0px; margin:0px;" class="formular" method="POST">
 										<input type="hidden" name="id_to_delete" value="{% print(rez[0]) %}">
-										<input type="submit" name="delete", value="delete book" class="btn brand z-depth-0" >
+										<input type="submit" name="delete_book", value="delete book" class="btn brand z-depth-0" >
 								</form>
 							</div>
 						</div>				

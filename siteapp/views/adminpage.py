@@ -27,6 +27,7 @@ def show():
 			mycursor.execute(sql, val)
 			mydb.commit()
 
+			#delete the books that corespond to the user
 			sql = "DELETE FROM personal_books WHERE id_user=%s"
 			val = (id_to_delete,)
 			mycursor.execute(sql, val)

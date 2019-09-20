@@ -2,5 +2,35 @@
 
 {% block content %}
 	
+	<div class="container">
+		<div class="row">
+			{% for rez in result: %}
+				<div class="col s6 ">
+					<div class="card transparent_setup">
+						<div class="row">
+							<div class="col s6">
+								<img src="static/image/book6.png" class="image_setup">
+							</div>
+							<div class="col s6">
+								<div class="center" style="margin-top:100px;">
+									<p class="p_title">{% print (rez[3]) %}</h5>
+									<p class="p_author">{% print ('By:  ' + rez[4]) 	%}</p>
+									<p >{% print (rez[5]) 	%}
+										{%	print (' pages')
+										%}
+									</p>
+								</div>
+
+							</div>
+						</div>
+						<div class="card-content">
+							<p class="p_review bold">{% print('Review') %}
+							<p class="white ">{%	print (rez[6]) 	%}</p>
+						</div>				
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 
 {% endblock %}

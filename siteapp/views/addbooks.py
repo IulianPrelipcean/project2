@@ -16,10 +16,11 @@ def show():
 			nr_page = request.form.get('nr_page')
 			review = request.form.get('review')
 			id_user = int(session['id_user'])
+			in_shop = 0
 
 			mycursor = mydb.cursor()
-			sql = "INSERT INTO personal_books(id_user,book_name, author, nr_page, review) VALUES (%s,%s, %s, %s, %s) "
-			val = (id_user,book_name, author, nr_page, review)
+			sql = "INSERT INTO personal_books(id_user, in_shop, book_name, author, nr_page, review) VALUES (%s,%s,%s, %s, %s, %s) "
+			val = (id_user, in_shop, book_name, author, nr_page, review)
 			mycursor.execute(sql,val)
 			mydb.commit()
 
