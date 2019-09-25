@@ -14,6 +14,13 @@ def show():
 	mycursor.execute(sql)
 	result = mycursor.fetchall()
 
+	#take the data from the contact tabel
+	mycursor = mydb.cursor()
+	sql = "SELECT * FROM contact"
+	mycursor.execute(sql)
+	result_contact = mycursor.fetchall()
+
+
 	#checking the form for deleting an user
 	if request.method == 'POST':
 		if request.form.get('delete'):
@@ -35,4 +42,5 @@ def show():
 
 			return redirect('adminpage')
 
-	return render_template('adminpage.html', result=result)
+
+	return render_template('adminpage.html', result=result, result_contact=result_contact)
